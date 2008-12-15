@@ -1,0 +1,3 @@
+= ffi-zlib
+
+A ruby-ffi wrapper for the zlib library.
