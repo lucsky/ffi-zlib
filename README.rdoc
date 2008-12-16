@@ -1,7 +1,0 @@
-= ffi-zlib
-
-A ruby-ffi wrapper for the zlib library. 
-
-= Usage
-
-ffi-zlib being a very thin wrapper roughly reproducing the zlib header(s), you can simply refer to the zlib manual for details and usage: http://www.zlib.net/manual.html.
