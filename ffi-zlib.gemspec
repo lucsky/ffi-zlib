@@ -10,10 +10,19 @@ $spec = Gem::Specification.new do |s|
     s.email             = "luc@honk-honk.com"
     s.rubyforge_project = "ffi-zlib"
 
-    s.files             = Dir["lib/**/*.rb"] + Dir["tests/**/*"] + ["Rakefile", "README.mdown", "ffi-zlib.gemspec"]
-    s.test_files        = Dir["tests/test_*.rb"]
     s.require_path      = "lib"
     s.has_rdoc          = false
+    s.test_files        = %w( tests/test_checksums.rb
+                              tests/test_compress.rb
+                              tests/test_deflate.rb
+                              tests/test_gz.rb
+                              tests/test_misc.rb )
+    s.files             = %w( README.mdown
+                              Rakefile
+                              ffi-zlib.gemspec
+                              lib/ffi/zlib.rb
+                              tests/helper.rb
+                              tests/support/pale_blue_dot.txt ) + s.test_files
 
     s.add_dependency("ffi")
 end
