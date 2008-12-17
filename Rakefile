@@ -1,15 +1,17 @@
 require "rubygems"
-require "test/unit"
+require 'rake/gempackagetask'
 
-task :gem => [:clean] do
-    system "gem build ffi-zlib.gemspec"
-end
+load 'ffi-zlib.gemspec'
 
-task :clean do
-    Dir["ffi-zlib-*.gem"].each { |f| File.delete(f) }
+Rake::GemPackageTask.new($spec) do |p|
+  p.need_tar = true
+  p.need_zip = true
 end
 
 task :test do
+    require "test/unit"
     $LOAD_PATH << "lib"
     Dir[File.join("tests", "test_*.rb")].each { |t| require t }
 end
+
+task :default => :package
