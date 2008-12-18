@@ -4,15 +4,19 @@ A ruby-ffi wrapper for the zlib library.
 
 # Installation
 
+## From Rubyforge (the usual way)
+
+    [sudo] gem install ffi-zlib
+
 ## From GitHub hosted gems
 
-    sudo gem sources -a http://gems.github.com # (you only need to do this once)
-    sudo gem install ffi-zlib
+    [sudo] gem sources -a http://gems.github.com # (you only need to do this once)
+    [sudo] gem install lucsky-ffi-zlib
 
 ## Building your own gems
 
     rake gem
-    sudo gem install ffi-zlib-x.x.x.gem
+    [sudo] gem install ffi-zlib-x.x.x.gem
 
 ## Usage
 
