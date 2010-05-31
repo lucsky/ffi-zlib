@@ -1,17 +1,8 @@
-require "rubygems"
-require 'rake/gempackagetask'
+require "rake/testtask"
 
-load 'ffi-zlib.gemspec'
+task :default => [:test]
 
-Rake::GemPackageTask.new($spec) do |p|
-  p.need_tar = true
-  p.need_zip = true
+Rake::TestTask.new do |task|
+    task.libs << "lib"
+    task.test_files = FileList["test/test*.rb"]
 end
-
-task :test do
-    require "test/unit"
-    $LOAD_PATH << "lib"
-    Dir[File.join("tests", "test_*.rb")].each { |t| require t }
-end
-
-task :default => :package

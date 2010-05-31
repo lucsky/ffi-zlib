@@ -1,11 +1,11 @@
 require "test/unit"
 require "ffi/zlib"
-require "tests/helper.rb"
+require "test/helper.rb"
 
 class TestDeflate < Test::Unit::TestCase
 
     def setup
-        @data = File.read(File.join("tests", "support", "pale_blue_dot.txt"))
+        @data = File.read(File.join("test", "fixtures", "pale_blue_dot.txt"))
         @buffer = FFI::MemoryPointer.new(@data.length)
         @buffer.put_string(0, @data)
     end

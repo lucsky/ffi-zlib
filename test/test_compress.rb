@@ -1,6 +1,6 @@
 require "test/unit"
 require "ffi/zlib"
-require "tests/helper.rb"
+require "test/helper.rb"
 
 class TestCompress < Test::Unit::TestCase
     include Setup
